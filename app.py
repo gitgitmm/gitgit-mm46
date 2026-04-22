@@ -9,12 +9,17 @@ app = Flask(__name__)
 def index():
     naslovSpiska="Restorani"
     spisakRestorana=["Groš", "Bavka", "Nedodjija", "Dits", "ABC"]
-    return render_template(index.html)
-    naslov=naslovSpiska
-    spisak=spisakRestorana
+    return render_template(index.html, naslov=naslovSpiska, spisak=spisakRestorana)
+    
+@app.route("/Restoran")
+def index():
+    naslovSpiska="Bavka meni"
+    spisakJela=["Gulaš", "Suši", "Kineska", "Ramen", "Čimičuri"]
+    return render_template(index.html, naslov=naslovSpiska, spisak=spisakJela)
+    
 @app.route("/primer-string")
 def string():
-    return "Neki ne preterano dugacak tekst"
+    return "Neki ne preterano dugacak tekst
 @app.route("/primer-broj")
 def broj():
     return 265
