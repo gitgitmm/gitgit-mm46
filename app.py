@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    con = sqlite.3.connect('dostavaHrane.db')
+    con = sqlite.3.connect("dostavaHrane.db")
 
     cur = con.cursor()
     cur.execute("SELECT id, naziv FROM restorani LIMIT 10")
@@ -17,7 +17,7 @@ def index():
     
 @app.route("/restoran/<id_rest>")
 def meni_restorana(id_rest):
-    con = sqlite3.connect('dostavaHrane.db')
+    con = sqlite3.connect("dostavaHrane.db")
 
     cur = con.cursor()
     query = f"SELECT naziv FROM meni where id_restorana == {id_rest}
