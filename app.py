@@ -28,7 +28,7 @@ def meni_restorana(id_rest):
     
 @app.route("/primer-string")
 def string():
-    return "Neki ne preterano dugacak tekst
+    return "Neki ne preterano dugacak tekst"
 @app.route("/primer-broj")
 def broj():
     return 265
